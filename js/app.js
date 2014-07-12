@@ -30,7 +30,7 @@ $(document).ready(function() {
 	})
 
 	.mouseup(function() {
-	console.log('mouseup');
+	//console.log('mouseup');
 	//ryu goes back to his ready position
 	$('.ryu-throwing').hide();
 	$('.ryu-ready').show();
