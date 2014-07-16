@@ -53,3 +53,16 @@ body {
 	left: -157px;
 	float: left;
 }
+
+#instructions {
+	position: relative;
+	display: block;
+	float: right;
+}
+
+#instructions p {
+	font-family: cursive;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+}
