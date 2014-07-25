@@ -1,34 +1,32 @@
 $(document).ready(function() {
-	$('#section1').focus(function() {
-		$('#section1').keydown(function(event) { 
-			if (event.which == '88') {
-				$('.ryu-still').hide();
-				$('.ryu-ready').hide();
-				$('.ryu-cool').show();	
-			} 
-		})
+	$('body').on('keydown', function(event) { 
+		if (event.which == '88') {
+			$('.ryu-still').hide();
+			$('.ryu-ready').hide();
+			$('.ryu-cool').show();	
+		} 
+	})
 
-		.keyup(function(event) {
-			if (event.which == '88') {
-				$('.ryu-cool').hide();
-				$('.ryu-still').show();
-			}
-		});
+	.on('keyup', function(event) {
+		if (event.which == '88') {
+			$('.ryu-cool').hide();
+			$('.ryu-still').show();
+		}
 	});
 	
-	$('.ryu').mouseenter(function() {  
+	$('.ryu').on('mouseenter', function() {  
 		$('.ryu-still').hide();
 		$('.ryu-cool').hide();
 		$('.ryu-ready').show();
 	})
 
-	.mouseleave(function() { 
+	.on('mouseleave', function() { 
 		$('.ryu-ready').hide();
 		$('.ryu-cool').hide();
 		$('.ryu-still').show();
 	})
 
-	.mousedown(function() {
+	.on('mousedown', function() {
 		//play hadouken sound
 		playHadouken();
 		//show hadouken and animate it to the right of the screen
@@ -48,15 +46,13 @@ $(document).ready(function() {
 		);
 	})
 
-	.mouseup(function() {
+	.on('mouseup', function() {
 		//ryu goes back to his ready position
 		$('.ryu-still').hide();
 		$('.ryu-throwing').hide();
 
 		$('.ryu-ready').show();
 	});
-
-
 
 	function playHadouken() {
 		$('#hadouken-sound')[0].volume = 0.5;
